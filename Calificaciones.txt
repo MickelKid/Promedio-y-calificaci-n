@@ -1,0 +1,125 @@
+void main(String...mickelKid) //Clase principal
+{
+    Participante objPar = new Participante();
+    String call = "B";
+    int[] CalifN = new int[5];
+
+    CalifN[0] = objPar.cali0;
+    CalifN[1] = objPar.cali1;
+    CalifN[2] = objPar.cali2;
+    CalifN[3] = objPar.cali3;
+    CalifN[4] = objPar.cali4;
+    int Suma = 0;
+    int cl = 0;
+    for (int n= 0; n<5; n++)
+    {
+        cl = CalifN[n];
+        Suma += cl;
+    }
+    double Promedio = (double) Suma / 5;
+    double calif;
+    calif = Promedio;
+    boolean CalifL = calif==0 && calif <=50;
+    {
+
+        if (CalifL)
+        {
+            call = "F";
+        }
+        else if (CalifL)
+        {
+            CalifL = calif==51 && calif <=60;
+            if (CalifL)
+                call = "E";
+            else if (CalifL) {
+                CalifL = calif==61 && calif <=70;
+                if (CalifL) {
+                    call = "D";
+                } else if (CalifL) {
+                    CalifL = calif==71 && calif <=80;
+                    if (CalifL) {
+                        call = "C";
+                    } else if (CalifL) {
+                        CalifL = calif==81 && calif <=90;
+                        if (CalifL) {
+                            call = "B";
+                        } else if (CalifL) {
+                            CalifL = calif==91 && calif <=100;
+                            if (CalifL) {
+                                call = "A";
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    System.out.println("Nombre:" + objPar.getNombre());
+    System.out.println("Calificaciones:");
+    for (int i = 0; i < 5; i++)
+    {
+        System.out.println(CalifN[i]);
+    }
+    System.out.println("El Promedio es:" + Promedio);
+    System.out.println("La calificación final es:" + call);
+}
+
+public class Participante //Subclase 
+{
+    private String Nombre  = "Juan";
+    int cali0 = 70;
+    int cali1 = 85;
+    int cali2 = 90;
+    int cali3 = 76;
+    int cali4 = 100;
+    private boolean CalifL;
+    String call;
+
+    public void setCali0(int cal0)
+    {
+        cali0 = cal0;
+    }
+    public void setCali1(int cal1)
+    {
+        cali1 = cal1;
+    }
+    public void setCali2(int cal2)
+    {
+        cali2 = cal2;
+    }
+    public void setCali3(int cal3)
+    {
+        cali3 = cal3;
+    }public void setCali4(int cal4)
+    {
+    cali4 = cal4;
+    }
+    public String getNombre()
+    {
+        return Nombre;
+    }
+    public void setNombre(String nombre)
+    {
+        Nombre = nombre;
+    }
+    public void setcalif(double Promedio)
+    {
+        double calif = Promedio;
+    }
+    public String getCall()
+    {
+        return call;
+    }
+   
+    public void creaParticipante(String _Nombre, int _Cali0, int _Cali1, int _Cali2, int _Cali3, int _Cali4)
+    {
+    Nombre = _Nombre;
+    cali0 = _Cali0;
+    cali1 = _Cali1;
+    cali2 = _Cali2;
+    cali3 = _Cali3;
+    cali4 = _Cali4;
+    }
+
+}
